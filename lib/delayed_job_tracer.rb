@@ -17,9 +17,9 @@ else
 
     def self.run(config)
       @@config = config
-      Notifier.notify_admin_of_email_issue unless MessageFinder.found_recent_message?
+      #Notifier.notify_admin_of_email_issue unless MessageFinder.found_recent_message?
       Notifier.notify_admin_of_queue_issue unless MySQLInterface.delayed_job_queue_ok?
-      MySQLInterface.queue_delayed_job
+      #MySQLInterface.queue_delayed_job
     end
 
   end
